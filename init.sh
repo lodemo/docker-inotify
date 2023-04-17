@@ -5,7 +5,7 @@
 #
 set -e
 
-CURL_OPTIONS_DEFAULT=x
+CURL_OPTIONS_DEFAULT=
 INOTIFY_EVENTS_DEFAULT="create,delete,modify,move"
 INOTIFY_OPTONS_DEFAULT='--monitor'
 
