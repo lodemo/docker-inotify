@@ -50,7 +50,7 @@ Please be aware that the Docker Socket is mounted inside this Docker Container a
 ## Debugging
 
 ### Docker API Requests
-Here are some sample API requests. Just exec the shell and try out the commands. Check out the [Docker API Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.42/) for more calls.
+Here are some sample API requests. Just exec the shell and try out the commands. Check out the [Docker API Documentation](https://docs.docker.com/engine/api/v1.42/) for more calls.
 ```
 # get all containers
 curl --unix-socket /var/run/docker.sock http:/1.42/containers/json
