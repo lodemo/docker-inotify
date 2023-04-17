@@ -36,11 +36,6 @@ docker-compse up -d
 ### Curl Options
 For debug propose it's possible to pass additional curl options into the container. Just set the environment variable `CURL_OPTIONS=-v`.
 
-
-### Signal
-The default signal is `SIGHUP`. This behaviour can be overwritten, if you set the environment variable `SIGNAL=<signal>`.
-
-
 ### Inotify Events
 The default inotify events are `create,delete,modify,move`. This behaviour can be overwritten, if you set the environment variable `INOTIFY_EVENTS=<events>`.
 
@@ -55,16 +50,16 @@ Please be aware that the Docker Socket is mounted inside this Docker Container a
 ## Debugging
 
 ### Docker API Requests
-Here are some sample API requests. Just exec the shell and try out the commands. Check out the [Docker API Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.22/) for more calls.
+Here are some sample API requests. Just exec the shell and try out the commands. Check out the [Docker API Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.42/) for more calls.
 ```
 # get all containers
-curl --unix-socket /var/run/docker.sock http:/containers/json
+curl --unix-socket /var/run/docker.sock http:/1.42/containers/json
 
 # stop a container
-curl -X POST --unix-socket /var/run/docker.sock http:/containers/bind/stop
+curl -X POST --unix-socket /var/run/docker.sock http:/1.42/containers/bind/stop
 
 # send a signal to a container
-curl -X POST --unix-socket /var/run/docker.sock http:/containers/bind/kill?signal=SIGHUP
+curl -X POST --unix-socket /var/run/docker.sock http:/1.42/containers/bind/kill?signal=SIGHUP
 ```
 
 
